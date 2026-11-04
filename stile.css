@@ -206,6 +206,8 @@ img { display: block; }
 .articolo .video { margin-bottom: 28px; }
 .testo h2 { font: 700 13px/1.3 Roboto, Arial, sans-serif; text-transform: uppercase; letter-spacing: .1em; color: var(--timbro); margin: 34px 0 10px; }
 .testo p { font: 400 19px/1.7 var(--serif); margin: 0 0 18px; }
+.spunto { margin: 10px 0 0; font-size: 13px; color: var(--grigio); }
+.spunto a { color: var(--grigio); text-decoration: underline; }
 .riquadro-fonti { margin-top: 40px; padding: 20px 24px; background: var(--carta-tenue); border: 1px solid var(--riga); border-left: 5px solid var(--timbro); border-radius: 8px; }
 .riquadro-fonti h2 { margin: 0; font: 700 20px/1.2 var(--serif); }
 .riquadro-fonti > p { font-size: 14px; color: var(--grigio); margin: 14px 0 0; }
