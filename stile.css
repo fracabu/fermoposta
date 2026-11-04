@@ -13,6 +13,7 @@
   --su-timbro: #fff;
   --riga: #e0cfad;
   --barra: 56px;
+  --piede: 48px;
   --serif: "Source Serif 4", Georgia, serif;
 }
 * { box-sizing: border-box; }
@@ -52,7 +53,7 @@ img { display: block; }
 
 /* ---------- home: pagina del canale ---------- */
 /* sopra la fascia crema col banner, sotto il nero (scelta dell'utente del 4/11/2026) */
-.canale { min-height: calc(100dvh - var(--barra)); display: flex; flex-direction: column; background: #14110e; }
+.canale { min-height: calc(100dvh - var(--barra) - var(--piede)); display: flex; flex-direction: column; background: #14110e; }
 .fascia { background: #f8ecd4; padding: 8px 24px; }
 .banner { display: block; margin: 0 auto; width: auto; max-width: 100%; height: clamp(90px, 15vw, 230px); object-fit: contain; 
   /* bordi sfumati: la grana della carta non fa riquadro sulla fascia a tinta unita */
@@ -91,9 +92,9 @@ img { display: block; }
 .guarda {
   /* larghezza del video: tutta quella che resta lasciando 360px alla colonna di destra, ma non più
      di quanto permette l'altezza (140px restano per titolo e riga del canale); il resto va a destra */
-  --largo: min(calc(100vw - 48px - 24px - 360px), calc((100dvh - var(--barra) - 40px - 140px) * 16 / 9));
+  --largo: min(calc(100vw - 48px - 24px - 360px), calc((100dvh - var(--barra) - var(--piede) - 40px - 150px) * 16 / 9));
   display: grid; grid-template-columns: var(--largo) minmax(340px, 1fr); gap: 24px;
-  padding: 20px 24px; height: calc(100dvh - var(--barra));
+  padding: 20px 24px; height: calc(100dvh - var(--barra) - var(--piede));
 }
 .principale { min-height: 0; overflow-y: auto; scrollbar-width: thin; }
 .video {
@@ -148,6 +149,17 @@ img { display: block; }
 .altro .dettagli { font-size: 12px; line-height: 18px; }
 .altro.attuale { opacity: .55; pointer-events: none; }
 
+/* footer: striscia scura sottile, alta --piede, così le pagine stanno ancora in uno schermo */
+.piede {
+  min-height: var(--piede); padding: 0 24px; background: #0d0b09; color: #b5a991;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap;
+  font-size: 13px; border-top: 1px solid #2b261f;
+}
+.piede p { margin: 0; }
+.piede nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.piede a { color: #f3ead8; }
+.piede a:hover { color: #ec5b50; }
+
 /* ---------- home: linguette e sezioni ---------- */
 .schede-canale button {
   border: 0; background: none; cursor: pointer; color: var(--grigio);
@@ -200,7 +212,7 @@ img { display: block; }
 
 /* schermo basso (finestra del portatile): la home si compatta per mostrare i video senza scroll */
 @media (max-height: 760px) and (min-width: 1001px) {
-  .banner { height: min(15vw, 28vh); }
+  .banner { height: min(15vw, 19vh); }
   .schede-canale { margin: 4px 0 14px; }
   .schede-canale span { padding: 6px 2px; }
   .griglia { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px 16px; }
@@ -228,3 +240,4 @@ img { display: block; }
   .riga-articolo img { width: 100%; }
   .testo p { font-size: 18px; }
 }
+.riga-canale .pillola { height: 32px; padding: 0 14px; font-size: 13px; }
