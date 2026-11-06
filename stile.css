@@ -38,6 +38,15 @@ img { display: block; }
 .marchio img { width: 34px; height: 34px; }
 .marchio span { font: 400 1.35rem/1 Anton, Impact, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
 .barra nav { display: flex; gap: 8px; }
+/* icone dei social nella barra */
+.icona {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--carta-scura); color: var(--inchiostro);
+}
+.icona svg { width: 20px; height: 20px; fill: currentColor; }
+.icona:hover { background: var(--timbro); color: var(--su-timbro); }
+.icona:focus-visible { outline: 3px solid var(--timbro); outline-offset: 2px; }
 
 /* pulsanti a pillola */
 .pillola {
